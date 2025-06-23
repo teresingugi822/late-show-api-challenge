@@ -23,6 +23,10 @@ def create_app():
     app.register_blueprint(episode_bp)
     app.register_blueprint(appearance_bp)
 
+    @app.route("/")
+    def index():
+        return "Late Show API is running!"
+
     return app
 
 if __name__ == '__main__':
