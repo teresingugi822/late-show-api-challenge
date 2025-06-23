@@ -1,0 +1,56 @@
+{
+  "info": {
+    "name": "Late Show API",
+    "_postman_id": "your-uuid",
+    "description": "Postman Collection for Late Show API",
+    "schema": "https://schema.getpostman.com/json/2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "url": {"raw": "http://127.0.0.1:5000/register", "host": ["127.0.0.1"], "port": "5000", "path": ["register"]},
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"john\",\"password\": \"pass123\"}"
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "url": {"raw": "http://127.0.0.1:5000/login", "host": ["127.0.0.1"], "port": "5000", "path": ["login"]},
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"john\",\"password\": \"pass123\"}"
+        }
+      }
+    },
+    {
+      "name": "Get Episodes",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://127.0.0.1:5000/episodes"}
+      }
+    },
+    {
+      "name": "Post Appearance (Protected)",
+      "request": {
+        "method": "POST",
+        "url": {"raw": "http://127.0.0.1:5000/appearances"},
+        "header": [
+            {"key": "Content-Type", "value": "application/json"},
+            {"key": "Authorization", "value": "Bearer <your_token_here>"}
+        ],
+        "body": {
+            "mode": "raw",
+            "raw": "{\"guest_id\":1, \"episode_id\":1, \"rating\":5}"
+        }
+      }
+    }
+  ]
+}
